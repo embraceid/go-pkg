@@ -207,6 +207,9 @@ func Any[T any](ctx context.Context, futures ...*Future[T]) (T, error) {
 		select {
 		case err := <-errCh:
 			return zero, err
+		// Defensive guard: only reachable if the outer select picks <-done while
+		// resultCh and errCh are both empty — a benign scheduling race that the
+		// public API cannot trigger deterministically (so it stays uncovered).
 		default:
 			return zero, errors.New("async: all futures failed")
 		}

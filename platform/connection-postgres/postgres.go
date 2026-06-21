@@ -41,11 +41,18 @@ func NewClient(cfg Config, opts ...Option) (*gorm.DB, error) {
 	cfg = normalizeConfig(cfg)
 	gormConfig := applyOptions(nil, opts...)
 	sqlDB, err := sql.Open("pgx", buildDSN(cfg))
+	// Defensive guard: sql.Open only errors for an unregistered driver. The pgx
+	// driver is always registered (blank import) and parses the DSN lazily at
+	// connect time, so this branch is unreachable in practice (untestable without
+	// injecting a fake opener).
 	if err != nil {
 		return nil, fmt.Errorf("failed to connect to database: %w", err)
 	}
 
 	db, err := gorm.Open(postgres.New(postgres.Config{Conn: sqlDB}), gormConfig)
+	// Defensive guard: with a supplied Conn and DisableAutomaticPing, gorm.Open
+	// performs no I/O and does not error here; connection failures surface at the
+	// PingContext call below. Unreachable in practice.
 	if err != nil {
 		_ = sqlDB.Close()
 		return nil, fmt.Errorf("failed to connect to database: %w", err)

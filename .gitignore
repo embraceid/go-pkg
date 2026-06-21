@@ -1,0 +1,6 @@
+# Local tooling caches
+.serena/
+
+# Coverage artifacts
+*.out
+coverage.*
