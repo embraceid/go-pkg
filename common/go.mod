@@ -1,4 +1,4 @@
-module pkg.embrace.id/go-pkg/common
+module pkg.embrace.id/go-pkg/common/v2
 
 go 1.26.1
 

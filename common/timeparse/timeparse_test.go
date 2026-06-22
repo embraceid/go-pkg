@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"pkg.embrace.id/go-pkg/common/timeparse"
+	"pkg.embrace.id/go-pkg/common/v2/timeparse"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

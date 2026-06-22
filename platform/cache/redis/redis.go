@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	sharedcache "pkg.embrace.id/go-pkg/platform/cache"
+	sharedcache "pkg.embrace.id/go-pkg/platform/v2/cache"
 	goredis "github.com/redis/go-redis/v9"
 )
 
