@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	sharedcache "pkg.embrace.id/platform/cache"
+	sharedcache "pkg.embrace.id/go-pkg/platform/cache"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

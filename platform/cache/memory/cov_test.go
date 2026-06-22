@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	sharedcache "pkg.embrace.id/platform/cache"
+	sharedcache "pkg.embrace.id/go-pkg/platform/cache"
 
 	"github.com/stretchr/testify/require"
 )

@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	sharedcache "pkg.embrace.id/platform/cache"
+	sharedcache "pkg.embrace.id/go-pkg/platform/cache"
 )
 
 type cacheItem struct {

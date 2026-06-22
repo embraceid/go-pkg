@@ -7,7 +7,7 @@ import (
 
 	"github.com/alicebob/miniredis/v2"
 	"github.com/redis/go-redis/v9"
-	sharedcache "pkg.embrace.id/platform/cache"
+	sharedcache "pkg.embrace.id/go-pkg/platform/cache"
 	"github.com/stretchr/testify/require"
 )
 
